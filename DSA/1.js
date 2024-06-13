@@ -32,7 +32,7 @@ pattern2(5);
 function pattern3(n) {
     for (let i = 0; i < n; i++) {
         let str = "";
-        for (let j = i; j >= i; j--) {
+        for (let j = 0; j <= i; j++) {
             str += String.fromCharCode('A'.charCodeAt(0) + j);
         }
         console.log(str);
