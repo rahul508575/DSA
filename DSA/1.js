@@ -231,20 +231,92 @@ function allDivisors(n) {
 }
 allDivisors(12);
 
-function primeNumber (n){
-    let count = 0; 
-    for(let i = 1; i<=n; i++){
-        if(n%i==0){
+function primeNumber(n) {
+    let count = 0;
+    for (let i = 1; i <= n; i++) {
+        if (n % i == 0) {
             count++;
         }
     }
-    if(count <= 2) {
+    if (count <= 2) {
         console.log('Prime Number');
-    }else{
+    } else {
         console.log('Not PrimeNumber');
     }
     console.log(count);
 }
 primeNumber(21);
+
+// Using Reursion --
+
+function printName(name, times) {
+    if (times <= 0) {
+        return;
+    }
+    console.log(name);
+    printName(name, times - 1);
+}
+printName("Rahul", 5);
+
+function printNum(n, count = 1) {
+    if (n <= 0) {
+        return;
+    }
+    console.log(count);
+    printNum(n - 1, count + 1);
+}
+printNum(5);
+
+function printRevNum(n, count = n) {
+    if (n <= 0) {
+        return;
+    }
+    console.log(count);
+    printRevNum(n - 1, count - 1);
+}
+printRevNum(5);
+
+function sumOfNum(n, sum = 0) {
+    if (n <= 0) {
+        console.log(sum);
+        return;
+    }
+    sumOfNum(n - 1, sum + n);
+}
+sumOfNum(5);
+
+function factorial(n, sum = 1) {
+    if (n <= 0) {
+        console.log(sum);
+        return;
+    }
+    sumOfNum(n - 1, sum * n);
+}
+sumOfNum(7);
+
+function reverseArray(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+    let firstElement = arr.shift();
+    let reversedArray = reverseArray(arr);
+    reversedArray.push(firstElement)
+    return reversedArray;
+}
+let input = [5, 4, 3, 2, 1];
+let output = reverseArray([...input]);
+console.log(output);
+
+function fibonacciSeries(n, num1 = 0, num2 = 1) {
+    if (n <= 0) {
+        return;
+    }
+    console.log(num1);
+    fibonacciSeries(n - 1, num2, num1 + num2);
+}
+fibonacciSeries(5);
+
+
+
 
 
